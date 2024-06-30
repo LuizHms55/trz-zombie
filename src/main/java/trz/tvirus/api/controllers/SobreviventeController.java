@@ -29,17 +29,19 @@ public class SobreviventeController {
         return sobreviventeService.cadastrar(sobreviventeDTO);
     }
 
-    @PutMapping
-    @RequestMapping("/localizacao")
+    @PutMapping("/localizacao")
     public ResponseEntity<SobreviventeDTO> atualizarLocal(@RequestBody @Valid AtualizarLocalizacaoDTO localizacaoDTO) throws NoSuchMethodException {
         return sobreviventeService.atualizarLocal(localizacaoDTO);
     }
 
-    @PutMapping
-    @RequestMapping("/inventario")
+    @PutMapping("/inventario")
     public ResponseEntity<SobreviventeDTO> atualizarInventario(@RequestBody @Valid AtualizarInventarioDTO inventarioDTO) throws NoSuchMethodException {
         return sobreviventeService.atualizarInventario(inventarioDTO);
     }
 
+    @PutMapping("/infectado/{id}/{id2}")
+    public ResponseEntity<SobreviventeDTO> indicarInfectado(@PathVariable String id, @PathVariable String id2) throws NoSuchMethodException {
+        return sobreviventeService.indicarInfectado(id, id2);
+    }
 
 }

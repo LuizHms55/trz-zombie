@@ -25,6 +25,11 @@ public class Sobrevivente {
     @NotNull
     private Genero genero;
 
+    private boolean infectado;
+
+    @OneToMany(cascade = CascadeType.ALL)
+    private List<Denuncia> denuncias;
+
     @OneToOne(cascade = CascadeType.ALL)
     private Localizacao localizacao;
 
