@@ -61,6 +61,10 @@ public class SobreviventeService {
     public ResponseEntity<SobreviventeDTO> atualizarInventario(AtualizarInventarioDTO atualizarInventarioDTO) throws NoSuchMethodException {
         Sobrevivente sobrevivente = buscarPorId(atualizarInventarioDTO.getId());
 
+        if (sobrevivente.isInfectado()) {
+            throw new NoSuchMethodException("Sobrevivente infectado");
+        }
+
         Inventario inventario = new Inventario();
         inventario.setRecursos(atualizarInventarioDTO.getRecursos());
         inventario.setSobrevivente(sobrevivente);
