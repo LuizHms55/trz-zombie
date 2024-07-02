@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class TvirusApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(TvirusApplication.class, args);
+		SpringApplication.run(TvirusApplication.class, args): ;
 	}
 
 }
